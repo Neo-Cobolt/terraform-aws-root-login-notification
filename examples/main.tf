@@ -11,6 +11,6 @@ terraform {
 }
 
 
-module "root-login-notification" {
+module "root_login_notification" {
   source = "../"
 }
