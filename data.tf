@@ -32,7 +32,7 @@ data "aws_iam_policy_document" "event_bridge_sns_kms" {
     }
   }
 
-    statement {
+  statement {
     sid       = "Enable IAM policies"
     effect    = "Allow"
     resources = ["*"]

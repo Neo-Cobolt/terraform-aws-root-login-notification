@@ -22,8 +22,8 @@ resource "aws_cloudwatch_event_target" "sns" {
 }
 
 resource "aws_sns_topic" "aws_logins" {
-  name = "capture-iam-root-aws-login"
-  display_name = var.email_display_name
+  name              = "capture-iam-root-aws-login"
+  display_name      = var.email_display_name
   kms_master_key_id = aws_kms_key.sns.key_id
 }
 
@@ -36,7 +36,7 @@ resource "aws_sns_topic_subscription" "topic_email_subscription" {
   for_each = toset(var.email_address_list)
 
   topic_arn = aws_sns_topic.aws_logins.arn
-  protocol  = local.workspace["notification_type"]
+  protocol  = var.notification_type
   endpoint  = each.key
 }
 
@@ -45,7 +45,7 @@ resource "aws_sns_topic_subscription" "topic_email_subscription" {
 resource "aws_kms_key" "sns" {
   description             = var.kms_key_description
   deletion_window_in_days = 30
-  policy = data.aws_iam_policy_document.event_bridge_sns_kms.json
+  policy                  = data.aws_iam_policy_document.event_bridge_sns_kms.json
 }
 
 resource "aws_kms_alias" "sns" {
