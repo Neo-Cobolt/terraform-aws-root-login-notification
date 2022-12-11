@@ -12,5 +12,11 @@ terraform {
 
 
 module "root_login_notification" {
-  source = "../"
+  source = "../."
+
+  email_address_list = ["email@example.com"]
+
+  email_display_name = "Root Account Test Login"
+
+  notification_type = "email-json"
 }
