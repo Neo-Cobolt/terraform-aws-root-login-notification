@@ -24,5 +24,9 @@ jobs:
 
       - name: Release
         uses: cycjimmy/semantic-release-action@v2
+        with:  
+          semantic_version: 15.13.28
+          # you can set branch for semantic-release older than v16.
+          branch: your-branch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
