@@ -1,44 +1,34 @@
 formatter: "markdown table" # this is required
-
-version: ""
-
+version: "0.16"
 header-from: main.tf
 footer-from: ""
-
 recursive:
-  enabled: false
-  path: modules
-
+  enabled: true
+  path: ""
 sections:
   hide: []
   show: []
-
   hide-all: false # deprecated in v0.13.0, removed in v0.15.0
   show-all: true  # deprecated in v0.13.0, removed in v0.15.0
 
-content: ""
-
 output:
-  file: ""
+  file: README.md
   mode: inject
   template: |-
-    <!-- BEGIN_TF_DOCS -->
-    {{ .Content }}
-    <!-- END_TF_DOCS -->    
-
+      <!-- BEGIN_AUTOMATED_TF_DOCS_BLOCK -->
+      {{ .Content }}
+      <!-- END_AUTOMATED_TF_DOCS_BLOCK -->
 output-values:
   enabled: false
   from: ""
-
 sort:
   enabled: true
   by: name
-
 settings:
   anchor: true
   color: true
   default: true
-  description: false
+  description: true
   escape: true
   hide-empty: false
   html: true
