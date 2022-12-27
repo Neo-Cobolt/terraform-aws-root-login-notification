@@ -45,6 +45,8 @@ resource "aws_sns_topic_subscription" "topic_email_subscription" {
 resource "aws_kms_key" "sns" {
   description             = "KMS Key SNS Custom"
   deletion_window_in_days = 30
+  is_enabled = true
+  enable_key_rotation = true
   policy = data.aws_iam_policy_document.event_bridge_sns_kms.json
 }
 
