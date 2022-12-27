@@ -10,11 +10,17 @@ terraform {
   }
 }
 
+provider "aws" {
+  profile = "testing"
+  region  = "us-east-1"
+
+}
+
 
 module "root_login_notification" {
   source = "../."
 
-  email_address_list = ["email@example.com"]
+  email_address_list = ["example.fake@gmail.com"]
 
   email_display_name = "Root Account Test Login"
 

@@ -19,7 +19,10 @@ data "aws_iam_policy_document" "event_bridge_sns_kms" {
   statement {
     sid       = "Allow CWE to use the key"
     effect    = "Allow"
-    resources = ["*"]
+    resources = [
+      #var.kms_master_key_id
+      "*"
+    ]
 
     actions = [
       "kms:Decrypt",
@@ -35,7 +38,10 @@ data "aws_iam_policy_document" "event_bridge_sns_kms" {
   statement {
     sid       = "Enable IAM policies"
     effect    = "Allow"
-    resources = ["*"]
+    resources = [
+      #var.kms_master_key_id
+      "*"
+    ]
     actions   = ["kms:*"]
 
     principals {

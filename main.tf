@@ -24,8 +24,8 @@ resource "aws_cloudwatch_event_target" "sns" {
 resource "aws_sns_topic" "aws_logins" {
   name              = "capture-iam-root-aws-login"
   display_name      = var.email_display_name
-  kms_master_key_id = aws_kms_key.sns.key_id
-}
+  kms_master_key_id = aws_kms_key.sns.id
+  }
 
 resource "aws_sns_topic_policy" "default" {
   arn    = aws_sns_topic.aws_logins.arn
@@ -43,12 +43,12 @@ resource "aws_sns_topic_subscription" "topic_email_subscription" {
 # KMS
 
 resource "aws_kms_key" "sns" {
-  description             = var.kms_key_description
+  description             = "KMS Key SNS Custom"
   deletion_window_in_days = 30
-  policy                  = data.aws_iam_policy_document.event_bridge_sns_kms.json
+  policy = data.aws_iam_policy_document.event_bridge_sns_kms.json
 }
 
 resource "aws_kms_alias" "sns" {
-  name          = "alias/root-sns"
+  name          = "alias/root-monitor-sns"
   target_key_id = aws_kms_key.sns.key_id
 }
