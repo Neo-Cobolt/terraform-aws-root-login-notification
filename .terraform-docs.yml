@@ -4,7 +4,7 @@ header-from: main.tf
 footer-from: ""
 recursive:
   enabled: true
-  path: ""
+  path: "/."
 sections:
   hide: []
   show: []

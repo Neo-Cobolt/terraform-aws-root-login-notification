@@ -59,20 +59,20 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_email_address_list"></a> [email\_address\_list](#input\_email\_address\_list) | n/a | `list(any)` | n/a | yes |
+| <a name="input_email_address_list"></a> [email\_address\_list](#input\_email\_address\_list) | List of email addresses to email from sns topic. | `list(any)` | n/a | yes |
 | <a name="input_email_display_name"></a> [email\_display\_name](#input\_email\_display\_name) | Display name of the email sent to users. It is best to name this after the account so you can tell accounts apart easily. | `string` | `""` | no |
-| <a name="input_notification_type"></a> [notification\_type](#input\_notification\_type) | value | `string` | `"email-json"` | no |
+| <a name="input_notification_type"></a> [notification\_type](#input\_notification\_type) | The type of notification to deliver, currently setup for email and email-json only. | `string` | `"email-json"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_event_bridge_rule_arn"></a> [event\_bridge\_rule\_arn](#output\_event\_bridge\_rule\_arn) | n/a |
-| <a name="output_event_bridge_rule_description"></a> [event\_bridge\_rule\_description](#output\_event\_bridge\_rule\_description) | n/a |
-| <a name="output_event_bridge_rule_event_bus_name"></a> [event\_bridge\_rule\_event\_bus\_name](#output\_event\_bridge\_rule\_event\_bus\_name) | n/a |
-| <a name="output_sns_arn"></a> [sns\_arn](#output\_sns\_arn) | n/a |
-| <a name="output_sns_display_name"></a> [sns\_display\_name](#output\_sns\_display\_name) | n/a |
-| <a name="output_sns_topic_subscriptions_arn"></a> [sns\_topic\_subscriptions\_arn](#output\_sns\_topic\_subscriptions\_arn) | n/a |
+| <a name="output_event_bridge_rule_arn"></a> [event\_bridge\_rule\_arn](#output\_event\_bridge\_rule\_arn) | Event bridge rule arn. |
+| <a name="output_event_bridge_rule_description"></a> [event\_bridge\_rule\_description](#output\_event\_bridge\_rule\_description) | Event bridge rule description. |
+| <a name="output_event_bridge_rule_event_bus_name"></a> [event\_bridge\_rule\_event\_bus\_name](#output\_event\_bridge\_rule\_event\_bus\_name) | Event bridge bus name. |
+| <a name="output_sns_arn"></a> [sns\_arn](#output\_sns\_arn) | value |
+| <a name="output_sns_display_name"></a> [sns\_display\_name](#output\_sns\_display\_name) | Display name for SNS topic |
+| <a name="output_sns_topic_subscriptions_arn"></a> [sns\_topic\_subscriptions\_arn](#output\_sns\_topic\_subscriptions\_arn) | All SNS topic subscriptions arns |
 <!-- END_AUTOMATED_TF_DOCS_BLOCK -->
 ## Footer
 
